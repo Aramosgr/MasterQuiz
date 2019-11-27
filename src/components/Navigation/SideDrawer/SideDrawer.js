@@ -17,6 +17,7 @@ import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import { FormattedMessage } from 'react-intl';
+import { Link } from 'react-router-dom';
 
 const drawerWidth = 240;
 
@@ -70,19 +71,23 @@ const SideDrawer = (props) => {
       <Divider />
       <List>
         {['Events', 'Quizzes', 'Questions', 'Users'].map((text, index) => (
-          <ListItem button key={text}>
-            <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-            <ListItemText primary={text} />
-          </ListItem>
+          <Link to={{ pathname: text!=="Events" ? `/${text}` : "/"}} >
+            <ListItem button key={text}>
+              <ListItemIcon>{<InboxIcon />}</ListItemIcon>
+              <ListItemText primary={text}/>
+            </ListItem>
+          </Link>
         ))}
       </List>
       <Divider />
       <List>
         {['Settings', 'Logout'].map((text, index) => (
+          <Link to={{ pathname: `/${text}`}} >
           <ListItem button key={text}>
-            <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-            <ListItemText primary={text} />
+            <ListItemIcon>{<MailIcon />}</ListItemIcon>
+            <ListItemText primary={text}/>
           </ListItem>
+          </Link>
         ))}
       </List>
     </div>

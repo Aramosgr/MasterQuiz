@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import './App.css';
-import SideDrawer from './components/Navigation/SideDrawer/SideDrawer';
+import SideDrawer from './components/Navigation/SideDrawer';
 import Main from './layouts/Main';
 
 function App() {
