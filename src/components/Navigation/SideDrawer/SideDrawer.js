@@ -28,7 +28,6 @@ const SideDrawer = (props) => {
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
   const handleDrawerToggle = () => {
-    console.log(props);
     setMobileOpen(!mobileOpen);
   };
 
