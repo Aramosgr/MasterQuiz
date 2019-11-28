@@ -1,3 +1,9 @@
 {
-    "test": "Im a test"
+    "test": "Im a test",
+    "Events": "Events",
+    "Quizzes": "Quizzes",
+    "Questions": "Questions",
+    "Users": "Users",
+    "Settings": "Settings",
+    "Logout": "Logout"
 }

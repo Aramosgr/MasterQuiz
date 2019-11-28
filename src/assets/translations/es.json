@@ -1,3 +1,9 @@
 {
-    "test": "Soy un test"
+    "test": "Soy un test",
+    "Events": "Eventos",
+    "Quizzes": "Quizzes",
+    "Questions": "Preguntas",
+    "Users": "Usuarios",
+    "Settings": "Ajustes",
+    "Logout": "Salir"
 }
