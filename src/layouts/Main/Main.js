@@ -7,6 +7,7 @@ const Main = (props) => {
   return (
       <Auxiliar>
         <Route path="/" exact component={Events} />
+        <Route path="/events" exact component={Events} />
         <Route path="/quizzes" component={Quizzes} />
         <Route path="/questions" component={Questions} />
         <Route path="/users" component={Users} />

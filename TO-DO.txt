@@ -1,3 +1,4 @@
 SIDEDRAWER
 
 Style the drawer and color the active item
+Remove drawer when clicked

@@ -17,6 +17,7 @@ import { useTheme } from '@material-ui/core/styles';
 import { FormattedMessage } from 'react-intl';
 import { Link } from 'react-router-dom';
 import useStyles from './SideDrawerStyles';
+import { MenuItem } from '@material-ui/core';
 
 
 const SideDrawer = (props) => {
@@ -27,6 +28,7 @@ const SideDrawer = (props) => {
   const [mobileOpen, setMobileOpen] = React.useState(false);
 
   const handleDrawerToggle = () => {
+    console.log(props);
     setMobileOpen(!mobileOpen);
   };
 
@@ -35,11 +37,11 @@ const SideDrawer = (props) => {
       <div className={classes.toolbar} />
       <Divider />
       <List>
-        {['Events', 'Quizzes', 'Questions', 'Users'].map((text, index) => (
-            <ListItem button key={text} component={Link} to={{ pathname: `/${text}` }}>
+        {['Events', 'Quizzes', 'Questions', 'Users'].map((text, index) => (         
+            <MenuItem selected button key={text} component={Link} to={{ pathname: `/${text}` }}>
               <ListItemIcon>{getIcon(text)}</ListItemIcon>
               <ListItemText primary={<FormattedMessage id={text} />} />
-            </ListItem>
+            </MenuItem>          
         ))}
       </List>
       <Divider />
@@ -55,7 +57,7 @@ const SideDrawer = (props) => {
   );
 
 
-  return (
+  return (    
     <div className={classes.root}>
       <CssBaseline />
       <AppBar position="fixed" className={classes.appBar}>
@@ -70,7 +72,7 @@ const SideDrawer = (props) => {
             {getIcon("Menu")}
           </IconButton>
           <Typography variant="h6" noWrap>
-            <FormattedMessage id="test" />
+            <FormattedMessage id="MasterQuiz" />
           </Typography>
         </Toolbar>
       </AppBar>

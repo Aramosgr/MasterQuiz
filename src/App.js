@@ -4,9 +4,10 @@ import './App.css';
 import SideDrawer from './components/Navigation/SideDrawer';
 import Main from './layouts/Main';
 
-function App() {
-  return (
-    <BrowserRouter>
+const App = (props) => {
+
+  return (    
+    <BrowserRouter>      
       <div className="App">
         <SideDrawer/>
         <Main/>
