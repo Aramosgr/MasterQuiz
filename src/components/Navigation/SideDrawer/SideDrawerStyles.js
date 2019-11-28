@@ -20,7 +20,6 @@ const useStyles = makeStyles(theme => ({
   },
   menuButton: {
     marginRight: theme.spacing(2),
-    color: '#FFFFFF',
     [theme.breakpoints.up('sm')]: {
       display: 'none',
     },

@@ -8,7 +8,6 @@ import Hidden from '@material-ui/core/Hidden';
 import IconButton from '@material-ui/core/IconButton';
 import getIcon from '../../../helpers/iconHelper';
 import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -18,6 +17,7 @@ import { FormattedMessage } from 'react-intl';
 import { Link } from 'react-router-dom';
 import useStyles from './SideDrawerStyles';
 import { MenuItem } from '@material-ui/core';
+import Profile from '../Profile';
 
 
 const SideDrawer = (props) => {
@@ -33,12 +33,14 @@ const SideDrawer = (props) => {
   };
 
   const drawer = (
-    <div>
-      <div className={classes.toolbar} />
+    <div>      
+      <div className={classes.toolbar}>
+      <Profile/>
+      </div>
       <Divider />
       <List>
         {['Events', 'Quizzes', 'Questions', 'Users'].map((text, index) => (         
-            <MenuItem selected button key={text} component={Link} to={{ pathname: `/${text}` }}>
+            <MenuItem button key={text} component={Link} to={{ pathname: `/${text}` }}>
               <ListItemIcon>{getIcon(text)}</ListItemIcon>
               <ListItemText primary={<FormattedMessage id={text} />} />
             </MenuItem>          
@@ -47,10 +49,10 @@ const SideDrawer = (props) => {
       <Divider />
       <List>
         {['Settings', 'Logout'].map((text, index) => (
-            <ListItem button key={text} component={Link} to={{ pathname: `/${text}` }}>
+            <MenuItem button key={text} component={Link} to={{ pathname: `/${text}` }}>
               <ListItemIcon>{getIcon(text)}</ListItemIcon>
               <ListItemText primary={<FormattedMessage id={text} />} />
-            </ListItem>      
+            </MenuItem>      
         ))}
       </List>
     </div>
@@ -77,6 +79,7 @@ const SideDrawer = (props) => {
         </Toolbar>
       </AppBar>
       <nav className={classes.drawer} aria-label="mailbox folders">
+        
         {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
         <Hidden smUp implementation="css">
           <Drawer

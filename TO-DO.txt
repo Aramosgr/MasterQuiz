@@ -1,4 +1,9 @@
 SIDEDRAWER
 
-Style the drawer and color the active item
+Style the drawer 
 Remove drawer when clicked
+
+
+LAYOUT
+
+Create a footer
