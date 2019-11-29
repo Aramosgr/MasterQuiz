@@ -6,11 +6,17 @@ import Main from './layouts/Main';
 
 const App = (props) => {
 
-  return (    
-    <BrowserRouter>      
+  //  TO-DO 3a
+  const menuItems = () => {
+    return ['Events', 'Quizzes', 'Questions', 'Users', 'Settings'];
+  }
+
+
+  return (
+    <BrowserRouter>
       <div className="App">
-        <SideDrawer/>
-        <Main/>
+        <SideDrawer />
+        <Main menuItems={menuItems()} />
       </div>
     </BrowserRouter>
   );

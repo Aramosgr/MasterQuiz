@@ -1,9 +1,12 @@
-SIDEDRAWER
+1 -> SIDEDRAWER
 
-Style the drawer 
-Remove drawer when clicked
+    1a -> Style the drawer 
+    1b -> Remove drawer when clicked
 
+2 -> LAYOUT
 
-LAYOUT
+    2a -> Create a footer
 
-Create a footer
+3 -> AUTHENTICATION
+
+    3a -> Get menu items per user permissions

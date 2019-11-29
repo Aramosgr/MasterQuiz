@@ -18,6 +18,7 @@ import { Link } from 'react-router-dom';
 import useStyles from './SideDrawerStyles';
 import { MenuItem } from '@material-ui/core';
 import Profile from '../Profile';
+import Logo from '../ToolbarLogo';
 
 
 const SideDrawer = (props) => {
@@ -33,6 +34,8 @@ const SideDrawer = (props) => {
 
   const drawer = (
     <div>      
+      <Logo/>
+      
       <div className={classes.toolbar}>
       <Profile/>
       </div>
@@ -93,19 +96,21 @@ const SideDrawer = (props) => {
             ModalProps={{
               keepMounted: true, // Better open performance on mobile.
             }}
+            logo="false"
           >
             {drawer}
           </Drawer>
         </Hidden>
-        <Hidden xsDown implementation="css">
+        <Hidden xsDown implementation="css">          
           <Drawer
             classes={{
               paper: classes.drawerPaper,
             }}
             variant="permanent"
             open
+            logo="true"
           >
-            {drawer}
+            {drawer}            
           </Drawer>
         </Hidden>
       </nav>

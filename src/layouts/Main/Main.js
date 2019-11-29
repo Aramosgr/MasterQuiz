@@ -1,18 +1,20 @@
 import React from 'react';
-import {Events, Quizzes, Questions, Users, Settings} from '../../components/UI';
 import Auxiliar from '../../hoc/Auxiliar';
-import {Route} from 'react-router-dom'; 
+import { Route } from 'react-router-dom';
+import {UISelector} from '../../components/UI/UISelector';
 
 const Main = (props) => {
+
+  const menuItems = () => {
+    return props.menuItems.map((element, index) =>
+      <Route path={`/${element}`} exact component={UISelector(element)} />
+    );
+  }
+
   return (
-      <Auxiliar>
-        <Route path="/" exact component={Events} />
-        <Route path="/events" exact component={Events} />
-        <Route path="/quizzes" component={Quizzes} />
-        <Route path="/questions" component={Questions} />
-        <Route path="/users" component={Users} />
-        <Route path="/settings" component={Settings} />
-      </Auxiliar>
+    <Auxiliar>
+      {menuItems()}
+    </Auxiliar>
   );
 }
 
