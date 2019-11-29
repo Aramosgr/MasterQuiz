@@ -19,6 +19,8 @@ import useStyles from './SideDrawerStyles';
 import { MenuItem } from '@material-ui/core';
 import Profile from '../Profile';
 import Logo from '../ToolbarLogo';
+import Button from '@material-ui/core/Button';
+
 
 
 const SideDrawer = (props) => {
@@ -34,8 +36,7 @@ const SideDrawer = (props) => {
 
   const drawer = (
     <div>      
-      <Logo/>
-      
+      <Logo/>      
       <div className={classes.toolbar}>
       <Profile/>
       </div>
@@ -75,9 +76,10 @@ const SideDrawer = (props) => {
           >
             {getIcon("Menu")}
           </IconButton>
-          <Typography variant="h6" noWrap>
-            <FormattedMessage id="MasterQuiz" />
-          </Typography>
+          {/* <Typography variant="h6" noWrap className={classes.title}>
+              <FormattedMessage id="MasterQuiz" />          
+          </Typography> */}
+          <Button color="inherit" className={classes.loginButton}>Login</Button>
         </Toolbar>
       </AppBar>
       <nav className={classes.drawer} aria-label="mailbox folders">

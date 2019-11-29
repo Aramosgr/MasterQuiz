@@ -24,7 +24,10 @@ const useStyles = makeStyles(theme => ({
       display: 'none',
     },
   },
-  toolbar: theme.mixins.toolbar,
+  toolbar: {
+    ...theme.mixins.toolbar,
+    justifyContent: 'flex-end'
+  },
   drawerPaper: {
     width: drawerWidth
   },
