@@ -15,7 +15,7 @@ const useStyles = makeStyles(theme => ({
   appBar: {
     [theme.breakpoints.up('sm')]: {
       width: `calc(100% - ${drawerWidth}px)`,
-      marginLeft: drawerWidth,
+      marginLeft: drawerWidth      
     },
   },
   menuButton: {
@@ -24,9 +24,9 @@ const useStyles = makeStyles(theme => ({
       display: 'none',
     },
   },
-  toolbar: {
-    ...theme.mixins.toolbar,
-    justifyContent: 'flex-end'
+  toolbar: theme.mixins.toolbar,
+  loginButton: {
+    marginLeft: 'auto'
   },
   drawerPaper: {
     width: drawerWidth
