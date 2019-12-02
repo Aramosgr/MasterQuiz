@@ -4,8 +4,8 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 import { IntlProvider } from "react-intl";
-import messages_en from "./assets/translations/en.json";
-import messages_es from "./assets/translations/es.json";
+import messages_en from "./constants/translations/en.json";
+import messages_es from "./constants/translations/es.json";
 import Firebase, { FirebaseContext } from './firebase';
 
 const messages = {
