@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import './App.css';
-import SideDrawer from './components/Navigation/SideDrawer';
-import Main from './layouts/Main';
+import SideDrawer from './components/navigation/SideDrawer';
+import Main from './components/layouts/Main';
 import Auth from './containers/Auth';
+import {FirebaseContext} from './firebase';
+
 
 const App = (props) => {
 
@@ -17,7 +19,13 @@ const App = (props) => {
   let content = displayLogin ? <Auth /> : (
     <div className="App">
       <SideDrawer />
-      <Main menuItems={menuItems()} />
+      <FirebaseContext.Consumer>
+        {(context) => {
+          console.log(context.auth);
+          return <Main menuItems={menuItems()}/>
+        }
+        }
+      </FirebaseContext.Consumer>      
     </div>
   );
 
