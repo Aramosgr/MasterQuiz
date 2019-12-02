@@ -6,6 +6,7 @@ import * as serviceWorker from './serviceWorker';
 import { IntlProvider } from "react-intl";
 import messages_en from "./assets/translations/en.json";
 import messages_es from "./assets/translations/es.json";
+import Firebase, { FirebaseContext } from './firebase';
 
 const messages = {
     'es': messages_es,
@@ -16,7 +17,9 @@ const language = navigator.language.split(/[-_]/)[0];
 
 ReactDOM.render(
     <IntlProvider locale={language} messages={messages[language]}>
-        <App />
+        <FirebaseContext.Provider value={new Firebase()}>
+            <App />
+        </FirebaseContext.Provider>
     </IntlProvider>,
     document.getElementById('root')
 );

@@ -1,0 +1,1 @@
+export {default as Auxiliar} from './Auxiliar';
