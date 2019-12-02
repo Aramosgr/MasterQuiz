@@ -1,33 +1,28 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import './App.css';
 import SideDrawer from './components/navigation/SideDrawer';
 import Main from './components/layouts/Main';
+import { withAuthentication } from './session/index';
 import Auth from './containers/Auth';
-import {FirebaseContext} from './firebase';
 
 
 const App = (props) => {
 
-  const [ displayLogin, setDisplayLogin ] = useState(false);
-
   // TO-DO 3a
   const menuItems = () => {
+    console.log(props.currentUser);
     return ['Events', 'Quizzes', 'Questions', 'Users', 'Settings'];
   }
 
-  let content = displayLogin ? <Auth /> : (
-    <div className="App">
-      <SideDrawer />
-      <FirebaseContext.Consumer>
-        {(context) => {
-          console.log(context.auth);
-          return <Main menuItems={menuItems()}/>
-        }
-        }
-      </FirebaseContext.Consumer>      
-    </div>
-  );
+  const content = props.currentUser === undefined ? (
+    <Auth/>
+  ) : (
+      <div className="App">
+        <SideDrawer />
+        <Main menuItems={menuItems()} />
+      </div>
+    );
 
   return (
     <BrowserRouter>
@@ -36,4 +31,4 @@ const App = (props) => {
   );
 }
 
-export default App;
+export default withAuthentication(App);

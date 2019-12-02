@@ -2,15 +2,14 @@ import React, {useEffect} from 'react';
 import * as firebaseui from 'firebaseui';
 import * as firebase from 'firebase';
 import Auxiliar from '../../hoc/Auxiliar';
-import {getUiConfig} from '../../helpers';
-import {firebaseConfig} from '../../constants/firebaseConfig';
+import {getUiConfig} from './authHelper';
+import { withAuthentication } from '../../session';
 
 const Auth = (props) => {
 
-    useEffect(() => {
-        firebase.initializeApp(firebaseConfig);
+    useEffect(() => {      
         firebase.analytics();
-        const loginUi = new firebaseui.auth.AuthUI(firebase.auth());        
+        const loginUi = new firebaseui.auth.AuthUI(props.firebase.auth);        
         loginUi.start('#firebaseui-auth-container', getUiConfig());    
       });
 
@@ -23,4 +22,4 @@ const Auth = (props) => {
      );
 }
  
-export default Auth;
+export default withAuthentication(Auth);

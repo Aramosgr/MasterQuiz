@@ -1,6 +1,6 @@
 import app from 'firebase/app';
-import 'firebase/auth';
-import 'firebase/firestore';
+//import 'firebase/auth';
+//import 'firebase/firestore';
 import {firebaseConfig} from '../constants/firebaseConfig';
 
 class Firebase {
@@ -22,6 +22,8 @@ class Firebase {
     this.googleProvider = new app.auth.GoogleAuthProvider();
     //this.facebookProvider = new app.auth.FacebookAuthProvider();
     //this.twitterProvider = new app.auth.TwitterAuthProvider();
+
+    this.currentUser = app.auth().currentUser;
   }
 
   // *** Auth API ***
@@ -64,9 +66,9 @@ class Firebase {
             const dbUser = snapshot.data();
 
             // default empty roles
-            if (!dbUser.roles) {
-              dbUser.roles = {};
-            }
+            // if (!dbUser.roles) {
+            //   dbUser.roles = {};
+            // }
 
             // merge auth and db user
             authUser = {
