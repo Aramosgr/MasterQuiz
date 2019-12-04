@@ -10,12 +10,10 @@ import Auth from './containers/Auth';
 const App = (props) => {
 
   // TO-DO 3a
-  const menuItems = () => {
-    console.log(props.currentUser);
-    return ['Events', 'Quizzes', 'Questions', 'Users', 'Settings'];
-  }
+  const menuItems = () => ['Events', 'Quizzes', 'Questions', 'Users', 'Settings'];
+  
 
-  const content = props.currentUser === undefined ? (
+  const content = props.currentUser !== undefined ? (
     <Auth/>
   ) : (
       <div className="App">
