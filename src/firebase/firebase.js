@@ -78,7 +78,6 @@ class Firebase {
               providerData: authUser.providerData,
               ...dbUser,
             };
-
             next(authUser);
           });
       } else {
