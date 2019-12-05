@@ -7,9 +7,9 @@ import { withAuthentication } from '../../session';
 
 const Auth = (props) => {
 
-    useEffect(() => {      
+    useEffect(() => {    
         firebase.analytics();
-        const loginUi = new firebaseui.auth.AuthUI(props.firebase.auth);        
+        const loginUi = firebaseui.auth.AuthUI.getInstance() ? firebaseui.auth.AuthUI.getInstance() : new firebaseui.auth.AuthUI(props.firebase.auth);        
         loginUi.start('#firebaseui-auth-container', getUiConfig());    
       });
 
