@@ -3,7 +3,7 @@ import app from 'firebase/app';
 //import 'firebase/firestore';
 import {firebaseConfig} from '../constants/firebaseConfig';
 
-class Firebase {
+class FirebaseHandler {
   constructor() {
     app.initializeApp(firebaseConfig);
 
@@ -98,4 +98,4 @@ class Firebase {
   messages = () => this.db.collection('messages');
 }
 
-export default Firebase;
+export default FirebaseHandler;

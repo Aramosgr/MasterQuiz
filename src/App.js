@@ -11,9 +11,7 @@ import {AuthUserContext} from './session/index';
 const App = (props) => {
 
   // TO-DO 3a
-  const menuItems = () => {
-    return ['Events', 'Quizzes', 'Questions', 'Users', 'Settings'];
-  }
+const menuItems = () => ['Events', 'Quizzes', 'Questions', 'Users', 'Settings'];
 
   const user = useContext(AuthUserContext);
 
