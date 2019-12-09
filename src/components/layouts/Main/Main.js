@@ -1,6 +1,9 @@
 import React from 'react';
-import {Auxiliar} from '../../../hoc';
+import PropTypes from 'prop-types';
 import { Route } from 'react-router-dom';
+
+import {Auxiliar} from '../../../hoc';
+import { MENU_ITEMS } from '../../../constants/routes';
 import {viewSelector} from '../../views/viewSelector';
 
 const Main = (props) => {
@@ -18,6 +21,10 @@ const Main = (props) => {
       {menuItems()}
     </Auxiliar>
   );
+}
+
+Main.propTypes = {
+  menuItems: PropTypes.arrayOf(PropTypes.oneOf(MENU_ITEMS)),
 }
 
 export default Main;

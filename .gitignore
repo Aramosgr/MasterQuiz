@@ -17,8 +17,13 @@
 .env.development.local
 .env.test.local
 .env.production.local
+
+# Random files
 CodeSnippets.txt
 TO-DO.txt
+
+# Sensible data
+firebaseConfig.js
 
 npm-debug.log*
 yarn-debug.log*
