@@ -42,7 +42,7 @@ const SideDrawer = (props) => {
       </div>
       <Divider />
       <List>
-        {['Events', 'Quizzes', 'Questions', 'Users'].map((text, index) => (         
+        {['Events', 'Quizzes', 'Questions', 'Users'].map((text) => (         
             <MenuItem button key={text} component={Link} to={{ pathname: `/${text}` }}>
               <ListItemIcon>{getIcon(text)}</ListItemIcon>
               <ListItemText primary={<FormattedMessage id={text} />} />
@@ -51,7 +51,7 @@ const SideDrawer = (props) => {
       </List>
       <Divider />
       <List>
-        {['Settings', 'Logout'].map((text, index) => (
+        {['Settings', 'Logout'].map((text) => (
             <MenuItem button key={text} component={Link} to={{ pathname: `/${text}` }}>
               <ListItemIcon>{getIcon(text)}</ListItemIcon>
               <ListItemText primary={<FormattedMessage id={text} />} />
