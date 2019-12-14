@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import PropTypes from 'prop-types';
 import AppBar from '@material-ui/core/AppBar';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -20,7 +20,7 @@ import { MenuItem } from '@material-ui/core';
 import Profile from '../Profile';
 import Logo from '../ToolbarLogo';
 import Button from '@material-ui/core/Button';
-
+import { AuthUserContext } from '../../../session';
 
 
 const SideDrawer = (props) => {
@@ -29,6 +29,7 @@ const SideDrawer = (props) => {
   const classes = useStyles();
   const theme = useTheme();
   const [mobileOpen, setMobileOpen] = React.useState(false);
+  const isAuthenticated = useContext(AuthUserContext);
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
@@ -42,7 +43,7 @@ const SideDrawer = (props) => {
       </div>
       <Divider />
       <List>
-        {['Events', 'Quizzes', 'Questions', 'Users'].map((text, index) => (         
+        {props.menuItems.map((text, index) => (         
             <MenuItem button key={text} component={Link} to={{ pathname: `/${text}` }}>
               <ListItemIcon>{getIcon(text)}</ListItemIcon>
               <ListItemText primary={<FormattedMessage id={text} />} />
@@ -50,14 +51,6 @@ const SideDrawer = (props) => {
         ))}
       </List>
       <Divider />
-      <List>
-        {['Settings', 'Logout'].map((text, index) => (
-            <MenuItem button key={text} component={Link} to={{ pathname: `/${text}` }}>
-              <ListItemIcon>{getIcon(text)}</ListItemIcon>
-              <ListItemText primary={<FormattedMessage id={text} />} />
-            </MenuItem>      
-        ))}
-      </List>
     </div>
   );
 
@@ -79,7 +72,7 @@ const SideDrawer = (props) => {
           {/* <Typography variant="h6" noWrap className={classes.title}>
               <FormattedMessage id="MasterQuiz" />          
           </Typography> */}
-          <Button color="inherit" className={classes.loginButton}>Login</Button>
+          <Button color="inherit" className={classes.loginButton}><FormattedMessage id='Logout' /></Button>
         </Toolbar>
       </AppBar>
       <nav className={classes.drawer} aria-label="mailbox folders">
