@@ -2,6 +2,7 @@ import React from 'react';
 import {Auxiliar} from '../../../hoc';
 import { Route } from 'react-router-dom';
 import {viewSelector} from '../../views/viewSelector';
+import {MENU_ITEMS} from '../../../constants/routes';
 
 const Main = (props) => {
 
