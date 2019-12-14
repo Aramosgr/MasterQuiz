@@ -8,3 +8,5 @@ export const QUESTIONS = '/questions';
 export const USERS = '/users';
 export const SETTINGS = '/settings';
 export const LOGIN = '/login';
+
+export const MENU_ITEMS = ['Events', 'Quizzes', 'Questions', 'Users', 'Settings'];

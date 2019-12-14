@@ -20,4 +20,8 @@ const Main = (props) => {
   );
 }
 
+Main.propTypes = {
+  menuItems: PropTypes.arrayOf(PropTypes.oneOf(MENU_ITEMS)),
+}
+
 export default Main;

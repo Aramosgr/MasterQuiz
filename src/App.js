@@ -1,5 +1,7 @@
 import React, { useContext } from 'react';
 import { BrowserRouter } from 'react-router-dom';
+import Auth from './firebase/Auth';
+
 import './App.css';
 import SideDrawer from './components/navigation/SideDrawer';
 import Main from './components/layouts/Main';
