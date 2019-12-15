@@ -11,7 +11,6 @@ import List from '@material-ui/core/List';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
 import { useTheme } from '@material-ui/core/styles';
 import { FormattedMessage } from 'react-intl';
 import { Link } from 'react-router-dom';
@@ -115,9 +114,9 @@ const SideDrawer = (props) => {
       </nav>
       <main className={classes.content}>
         <div className={classes.toolbar} />
-        <Typography paragraph>
+        {/* <Typography paragraph>
           This is some random text for the home page
-        </Typography>
+        </Typography> */}
       </main>
     </div>
   );

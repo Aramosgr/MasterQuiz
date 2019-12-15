@@ -1,7 +1,12 @@
-import { Events, Quizzes, Questions, Users, Settings, Login } from '.';
-import { EVENTS, QUIZZES, QUESTIONS, USERS, SETTINGS, LOGIN } from '../../constants/routes';
+import { Events, Quizzes, Questions, Users, Settings, Login, Home } from '.';
+import { EVENTS, QUIZZES, QUESTIONS, USERS, SETTINGS, LOGIN, HOME } from '../../constants/routes';
 
 const components = [
+    {
+        name: "Home",
+        component: Home,
+        route: HOME
+    },
     {
         name: "Login",
         component: Login,
