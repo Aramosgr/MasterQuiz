@@ -5,7 +5,9 @@ import {firebaseConfig} from '../constants/firebaseConfig';
 
 class FirebaseHandler {
   constructor() {
-    app.initializeApp(firebaseConfig);
+    if (!app.apps.length) {
+      app.initializeApp(firebaseConfig);
+    }
 
     /* Helper */
 

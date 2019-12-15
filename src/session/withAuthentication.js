@@ -24,7 +24,7 @@ const withAuthentication = Component => {
             return function cleanup() {
                 listener();
             };
-        });
+        },[]);
 
         return (
             <AuthUserContext.Provider value={authUser}>

@@ -1,6 +1,5 @@
 import React, { useContext } from 'react';
 import { BrowserRouter } from 'react-router-dom';
-import Auth from './firebase/Auth';
 
 import './App.css';
 import SideDrawer from './components/navigation/SideDrawer';
@@ -15,7 +14,7 @@ const App = (props) => {
 
   const menuItems = () => user === null ? ['Login'] : ['Events', 'Quizzes', 'Questions', 'Users', 'Settings'];
 
-  return (
+  return (    
     <BrowserRouter>
       <div className="App">
         <SideDrawer menuItems={menuItems()}/>

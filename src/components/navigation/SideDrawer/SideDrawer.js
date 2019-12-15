@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, {useContext} from 'react';
 import PropTypes from 'prop-types';
 import AppBar from '@material-ui/core/AppBar';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -20,7 +20,7 @@ import { MenuItem } from '@material-ui/core';
 import Profile from '../Profile';
 import Logo from '../ToolbarLogo';
 import Button from '@material-ui/core/Button';
-import { AuthUserContext } from '../../../session';
+import {FirebaseContext} from '../../../firebase';
 
 
 const SideDrawer = (props) => {
@@ -29,11 +29,15 @@ const SideDrawer = (props) => {
   const classes = useStyles();
   const theme = useTheme();
   const [mobileOpen, setMobileOpen] = React.useState(false);
-  const isAuthenticated = useContext(AuthUserContext);
+  const firebase = useContext(FirebaseContext);
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
   };
+
+  const signOut = () => {
+    firebase.doSignOut();
+  }
 
   const drawer = (
     <div>      
@@ -72,7 +76,7 @@ const SideDrawer = (props) => {
           {/* <Typography variant="h6" noWrap className={classes.title}>
               <FormattedMessage id="MasterQuiz" />          
           </Typography> */}
-          <Button color="inherit" className={classes.loginButton}><FormattedMessage id='Logout' /></Button>
+          <Button color="inherit" className={classes.loginButton} onClick={signOut}><FormattedMessage id='Logout' /></Button>
         </Toolbar>
       </AppBar>
       <nav className={classes.drawer} aria-label="mailbox folders">

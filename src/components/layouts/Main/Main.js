@@ -1,6 +1,8 @@
 import React from 'react';
-import {Auxiliar} from '../../../hoc';
 import { Route } from 'react-router-dom';
+import PropTypes from 'prop-types';
+
+import {Auxiliar} from '../../../hoc';
 import {viewSelector} from '../../views/viewSelector';
 import {MENU_ITEMS} from '../../../constants/routes';
 
